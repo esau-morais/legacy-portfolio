@@ -1,0 +1,53 @@
+  {
+  "plugins": ["@typescript-eslint", "prefer-arrow", "eslint-plugin-import-helpers"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "@remix-run/eslint-config",
+    "@remix-run/eslint-config/node"
+
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "error",
+    "prefer-arrow/prefer-arrow-functions": [
+      "error",
+      {
+        "disallowPrototype": true,
+        "singleReturnOnly": false,
+        "classPropertiesAllowed": false
+      }
+    ],
+    "prefer-arrow-callback": [
+      "error",
+      { "allowNamedFunctions": true }
+    ],
+    "func-style": [
+      "error",
+      "expression",
+      { "allowArrowFunctions": true }
+    ],
+    "semi": [ "error", "never" ],
+    "object-curly-spacing": ["error", "always"],
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^react/",
+          "/^next|@next/",
+          "/^@testing/",
+          "module",
+          "/^components/atoms/",
+          "/^components/molecules/",
+          "/^components/organisms/",
+          "/^components/templates/",
+          "/^hooks/",
+          "/^lib/",
+          "/^services/",
+          "/^utils/",
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ]
+  }
+}
