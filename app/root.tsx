@@ -28,7 +28,7 @@ const App = () => {
         <Meta />
         <Links />
       </head>
-      <body className="font-neutral bg-dark bg-retro text-light">
+      <body className="font-telegraf bg-dark bg-retro text-light">
         <Layout>
           <Outlet />
           <ScrollRestoration />
