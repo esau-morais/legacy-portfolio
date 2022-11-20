@@ -9,12 +9,12 @@ type TLayoutProps = {
   isHome?: boolean
 }
 
-const Layout = ({ children, isHome }: TLayoutProps) => {
+const Layout = ({ children, isHome = true }: TLayoutProps) => {
   return (
-    <div className="max-w-sm md:max-w-3xl lg:max-w-5xl md:px-300 my-5 mx-auto">
+    <div className="w-full min-h-screen">
       <Header />
 
-      <main className={cx(!isHome ? "mt-150" : "mt-300")}>{children}</main>
+      <main className={cx('mt-16 px-16', !isHome ? "md:px-300" : "md:px-150")}>{children}</main>
     </div>
   )
 }
