@@ -6,15 +6,20 @@ module.exports = {
   content: ["./app/**/*.{ts,tsx}"],
   theme: {
     fontFamily: {
-      'neutral': 'Neutral Face'
+      'telegraf': 'Telegraf'
     },
     fontSize: {
       base: '1rem',
       lg: '1.414rem',
+      'lg-mb': '1.333rem',
       xl: '1.999rem',
+      'xl-mb': '1.777rem',
       '2xl': '2.827rem',
+      '2xl-mb': '2.369rem',
       '3xl': '3.998rem',
-      '4xl': '5.653rem'
+      '3xl-mb': '2.441rem',
+      '4xl': '5.653rem',
+      '4xl-mb': '3.052rem'
     },
     colors: {
       'light': '#FFFFFF',
@@ -25,7 +30,8 @@ module.exports = {
       "light-blue": "#6FB1FC"
     },
     letterSpacing: {
-      wide: '0.22em'
+      wide: '0.22em',
+      'wide-mb': '0.11em'
     },
     spacing: {
       18: '1.125rem',

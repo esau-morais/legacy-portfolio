@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Neutral Face";
-  src: url("/fonts/NeutralFace.otf"), url("/fonts/NeutralFace-Bold.otf")
+  font-family: "Telegraf";
+  src: url("/fonts/PPTelegraf.otf"), url("/fonts/PPTelegraf-Bold.otf");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+a {
+  @apply uppercase;
 }
