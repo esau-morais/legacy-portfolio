@@ -33,7 +33,7 @@
         "newlinesBetween": "always",
         "groups": [
           "/^react/",
-          "/^next|@next/",
+          "/^remix|@remix/",
           "/^@testing/",
           "module",
           "/^components/atoms/",

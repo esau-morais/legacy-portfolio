@@ -8,6 +8,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react"
 
+import Layout from "./components/templates/Layout"
 import styles from "./styles/tailwind.css"
 
 export const meta: MetaFunction = () => ({
@@ -27,11 +28,13 @@ const App = () => {
         <Meta />
         <Links />
       </head>
-      <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
+      <body className="bg-dark bg-retro text-light">
+        <Layout>
+          <Outlet />
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
+        </Layout>
       </body>
     </html>
   )
