@@ -31,26 +31,28 @@ const Portal = ({ isOpen, onCloseModal }: TModalProps) => {
               className="w-full min-h-screen flex flex-col items-center justify-center transform overflow-hidden bg-dark/50 backdrop-blur shadow-xl transition-all"
             >
               
-              <div
+              <button
                 className="absolute top-6 right-9 flex flex-col items-center space-y-2"
-                role="button"
                 onClick={onCloseModal}
               >
                 <BarIcon className="w-8 rotate-45 translate-y-[5px]" />
                 <BarIcon className="w-8 -rotate-45 -translate-y-[5px]" />
-              </div>
+              </button>
 
-              {MENU_ITEMS.map(item => (
-                <Link
-                  ref={pathname === item.path ? currentActiveMenuItemRef : null}
-                  key={item.id}
-                  to={item.path}
-                  className={cx("text-4xl-mb md:text-4xl", pathname === item.path ? 'line-through decoration-blue' : '')}
-                >
-                    {item.label}
-                </Link>
-                )
-              )}
+              <ul>
+                {MENU_ITEMS.map(item => (
+                  <li key={item.id}>
+                    <Link
+                      ref={pathname === item.path ? currentActiveMenuItemRef : null}
+                      to={item.path}
+                      className={cx("text-4xl-mb md:text-4xl rotate-x-30 translate-z-[300px]", pathname === item.path ? 'line-through decoration-blue' : '')}
+                    >
+                        {item.label}
+                    </Link>
+                  </li>
+                  )
+                )}
+              </ul>
             </Dialog.Panel>
           </div>
         </div>

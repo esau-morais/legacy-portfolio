@@ -15,6 +15,7 @@ export const meta: MetaFunction = () => ({
   charset: "utf-8",
   title: "Esaú Morais",
   viewport: "width=device-width,initial-scale=1",
+  "color-scheme": "dark"
 })
 
 export const links: LinksFunction = () => [

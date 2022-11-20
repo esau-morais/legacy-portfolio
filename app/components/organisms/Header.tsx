@@ -14,14 +14,13 @@ const Header = () => {
       </div>
 
       {!isOpen ? 
-        <div
+        <button
           className="flex flex-col items-center space-y-2"
-          role="button"
           onClick={() => setIsOpen(true)}
         >
           <BarIcon />
           <BarIcon />
-        </div>
+        </button>
       : null}
 
       <Portal isOpen={isOpen} onCloseModal={() => setIsOpen(false)} />
