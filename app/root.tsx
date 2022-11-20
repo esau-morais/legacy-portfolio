@@ -13,7 +13,7 @@ import styles from "./styles/tailwind.css"
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "New Remix App",
+  title: "Esaú Morais",
   viewport: "width=device-width,initial-scale=1",
 })
 
@@ -28,7 +28,7 @@ const App = () => {
         <Meta />
         <Links />
       </head>
-      <body className="bg-dark bg-retro text-light">
+      <body className="font-neutral bg-dark bg-retro text-light">
         <Layout>
           <Outlet />
           <ScrollRestoration />
