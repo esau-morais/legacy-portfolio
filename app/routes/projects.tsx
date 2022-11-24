@@ -2,8 +2,8 @@ import { type LoaderFunction, json } from "@remix-run/node"
 import { useLoaderData } from "@remix-run/react"
 
 import Card from "@/components/molecules/Card"
+import { type IProject } from "@/lib/data"
 import { fetchProjects } from "@/services/projects.server"
-
 export const loader: LoaderFunction = async () => {
   const projects = await fetchProjects()
 
@@ -19,15 +19,13 @@ export const loader: LoaderFunction = async () => {
 
 
 const Projects = () => {
-  const projects = useLoaderData<typeof loader>()
+  const projects: IProject[] = useLoaderData<typeof loader>()
 
   return (
     <section className="flex flex-col items-center">
       <h1 className="text-4xl-mb md:text-4xl font-extrabold">Projects</h1>
 
-      <Redirect label="something" to="/" direction="east" />
-
-      <div className="gap-x-6 space-y-6 columns-1 md:columns-2 lg:columns-3">
+r     <div className="gap-x-6 space-y-6 columns-1 md:columns-2 lg:columns-3">
         {projects?.map(project => <Card key={project.id} data={project} />)}
       </div>
     </section>
