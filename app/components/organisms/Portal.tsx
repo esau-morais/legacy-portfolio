@@ -18,7 +18,17 @@ const Portal = ({ isOpen, onCloseModal }: TModalProps) => {
   const { pathname } = useLocation()
 
   return (
-    <Transition appear show={isOpen} as={Fragment}>
+    <Transition
+      appear
+      show={isOpen}
+      as={Fragment}
+        enter="transition-opacity duration-75"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-150"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+    >
       <Dialog
         as="div"
         className="relative z-10"
@@ -28,7 +38,7 @@ const Portal = ({ isOpen, onCloseModal }: TModalProps) => {
         <div className="fixed inset-0 overflow-y-auto">
           <div className="flex items-center justify-center text-center">
             <Dialog.Panel
-              className="w-full min-h-screen flex flex-col items-center justify-center transform overflow-hidden bg-dark/50 backdrop-blur shadow-xl transition-all"
+              className="w-full min-h-screen flex flex-col items-center justify-center transform overflow-hidden bg-dark/80 backdrop-blur shadow-xl transition-all"
             >
               
               <button
@@ -46,6 +56,7 @@ const Portal = ({ isOpen, onCloseModal }: TModalProps) => {
                       ref={pathname === item.path ? currentActiveMenuItemRef : null}
                       to={item.path}
                       className={cx("text-4xl-mb md:text-4xl rotate-x-30 translate-z-[300px]", pathname === item.path ? 'line-through decoration-blue' : '')}
+                      onClick={onCloseModal} 
                     >
                         {item.label}
                     </Link>
