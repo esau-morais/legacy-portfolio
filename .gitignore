@@ -5,6 +5,8 @@ node_modules
 .vercel
 .output
 
+coverage
+
 /build/
 /public/build
 /api/index.js
