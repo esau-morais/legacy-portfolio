@@ -34,7 +34,7 @@ const App = () => {
           <Outlet />
           <ScrollRestoration />
           <Scripts />
-          <LiveReload port={8002} />
+          <LiveReload />
         </Layout>
       </body>
     </html>

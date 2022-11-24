@@ -3,7 +3,6 @@ import { useLoaderData } from "@remix-run/react"
 
 import Card from "@/components/molecules/Card"
 import { fetchProjects } from "@/services/projects.server"
-import {Redirect} from "@/components/atoms"
 
 export const loader: LoaderFunction = async () => {
   const projects = await fetchProjects()
@@ -22,7 +21,6 @@ export const loader: LoaderFunction = async () => {
 const Projects = () => {
   const projects = useLoaderData<typeof loader>()
 
-  console.info({ projects })
   return (
     <section className="flex flex-col items-center">
       <h1 className="text-4xl-mb md:text-4xl font-extrabold">Projects</h1>
