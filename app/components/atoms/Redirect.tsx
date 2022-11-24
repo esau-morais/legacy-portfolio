@@ -1,4 +1,4 @@
-import { type ReactNode, useMemo } from "react"
+import { useMemo } from "react"
 
 import { Link, type LinkProps } from "@remix-run/react"
 
@@ -35,7 +35,8 @@ const Redirect = ({ to, label, direction }: TRedirectProps) => {
         </span>
         {direction ? 
           <span
-            aria-label="navigate"
+            data-testid="navigation_arrow"
+            aria-label={`navigate to ${to}`}
             className={cx(direction === 'west' ? 'mr-2' : 'ml-2')}
           >
             {renderArrowIconBasedOnDirection}
