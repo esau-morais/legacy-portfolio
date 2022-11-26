@@ -29,8 +29,9 @@ const Redirect = ({ to, label, direction }: TRedirectProps) => {
         role="link"
         className={cx("flex text-xl-mb md:text-xl font-extrabold", direction ? direction === 'west' ? 'flex-row-reverse' : 'justify-between'  : null)}
         to={to}
+        prefetch="render"
       >
-        <span>
+        <span className="line-clamp-1">
           {label}
         </span>
         {direction ? 
