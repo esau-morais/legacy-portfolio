@@ -1,16 +1,16 @@
 import { useMemo } from "react"
 
-import { Link, type LinkProps } from "@remix-run/react"
+import { Link } from "@remix-run/react"
+import type { RemixLinkProps } from "@remix-run/react/dist/components"
 
 import { cx } from "@/utils/classNames"
 
 type TRedirectProps = {
   label: string
-  to: LinkProps['to']
   direction?: 'west' | 'east' | 'northeast'
-}
+} & RemixLinkProps
 
-const Redirect = ({ to, label, direction }: TRedirectProps) => {
+const Redirect = ({ to, label, direction, ...rest }: TRedirectProps) => {
   const renderArrowIconBasedOnDirection = useMemo(() => { 
     switch(direction) {
       case 'west':
@@ -29,7 +29,7 @@ const Redirect = ({ to, label, direction }: TRedirectProps) => {
         role="link"
         className={cx("flex text-xl-mb md:text-xl font-extrabold", direction ? direction === 'west' ? 'flex-row-reverse' : 'justify-between'  : null)}
         to={to}
-        prefetch="render"
+        {...rest}
       >
         <span className="line-clamp-1">
           {label}

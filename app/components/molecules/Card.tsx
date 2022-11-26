@@ -16,6 +16,7 @@ const Card = ({ data }: { data: IProject }) => {
           label={data.name}
           to={`/project/${data.slug}`}
           direction="northeast"
+          prefetch="render"
         />
       </figcaption>
     </figure>
