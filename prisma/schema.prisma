@@ -7,10 +7,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model projects {
+model Project {
   id          BigInt   @id @default(autoincrement())
   name        String   @db.VarChar(200)
-  slug        String   @db.VarChar(50)
+  slug        String   @unique @db.VarChar(50)
   description String?  @db.VarChar(255)
   stack       String[] @db.VarChar(50)
   cover_image String   @db.VarChar(2000)

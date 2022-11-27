@@ -9,14 +9,14 @@ const Card = ({ data }: { data: IProject }) => {
         className="min-h-[inherit] object-cover"
         src={data.cover_image}
         alt={data.name}
-        loading="lazy"
       />
 
       <figcaption className="w-full bg-light text-dark p-4">
         <Redirect
           label={data.name}
-          to={data.slug}
+          to={`/project/${data.slug}`}
           direction="northeast"
+          prefetch="render"
         />
       </figcaption>
     </figure>
