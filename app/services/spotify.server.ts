@@ -1,3 +1,6 @@
+import { ITrack } from "@/lib/data"
+import { json } from "@remix-run/node"
+
 const client_id = process.env.SPOTIFY_CLIENT_ID
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET
 const refresh_token = String(process.env.SPOTIFY_REFRESH_TOKEN)
@@ -25,14 +28,25 @@ const getAccessToken = async () => {
 const fetchCurrentPlaying = async () => {
   const { access_token } = await getAccessToken()
 
-  const track = await fetch(CURRENT_PLAYING_ENDPOINT, {
+  const response = await fetch(CURRENT_PLAYING_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${access_token}`,
       'Cache-Control': 'max-age=1, stale-while-revalidate=59'
     }
   })
 
-  return await track.json()
+  if (response.status === 204 || response.status > 400) return json({ isPlaying: false })
+
+  const track = await response.json() as ITrack
+
+  if (!track.item) return json({ isPlaying: false })
+
+  return json({
+    isPlaying: track.is_playing,
+    title: track.item.name,
+    albumImageURL: track.item.album.images[1].url,
+    artistName: track.item.artists[0].name
+  })
 }
 
 export { fetchCurrentPlaying }
