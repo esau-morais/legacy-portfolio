@@ -1,40 +1,40 @@
-import type { TMenuItem } from "@/lib/types"
+import type { TMenuItem } from '@/lib/types'
 
 const MENU_ITEMS: Array<TMenuItem> = [
   {
     id: 1,
-    label: "Home",
-    path: "/"
+    label: 'Home',
+    path: '/'
   },
   {
     id: 2,
-    label: "Projects",
-    path: "/projects"
+    label: 'Projects',
+    path: '/projects'
   },
   {
     id: 3,
-    label: "Uses",
-    path: "/uses"
+    label: 'Uses',
+    path: '/uses'
   },
   {
     id: 4,
-    label: "Karaoke Time",
-    path: "/karoke"
+    label: 'Karaoke Time',
+    path: '/karoke'
   },
   {
     id: 5,
-    label: "Get In Touch",
-    path: "/contact"
+    label: 'Get In Touch',
+    path: '/contact'
   },
   {
     id: 6,
-    label: "About",
-    path: "/about"
+    label: 'About',
+    path: '/about'
   },
   {
     id: 7,
-    label: "Atoms",
-    path: "/atoms"
+    label: 'Atoms',
+    path: '/atoms'
   },
 ]
 

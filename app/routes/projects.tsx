@@ -1,9 +1,9 @@
-import { type LoaderFunction, json } from "@remix-run/node"
-import { useLoaderData } from "@remix-run/react"
+import { type LoaderFunction, json } from '@remix-run/node'
+import { useLoaderData } from '@remix-run/react'
 
-import Card from "@/components/molecules/Card"
-import { type IProject } from "@/lib/data"
-import { fetchProjects } from "@/services/projects.server"
+import Card from '@/components/molecules/Card'
+import { type IProject } from '@/lib/data'
+import { fetchProjects } from '@/services/projects.server'
 export const loader: LoaderFunction = async () => {
   const projects = await fetchProjects()
 

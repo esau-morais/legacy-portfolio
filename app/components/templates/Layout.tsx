@@ -1,10 +1,10 @@
-import type { ReactNode } from "react"
+import type { ReactNode } from 'react'
 
-import { useLocation } from "@remix-run/react"
+import { useLocation } from '@remix-run/react'
 
-import { cx } from "@/utils/classNames"
+import { cx } from '@/utils/classNames'
 
-import Header from "../organisms/Header"
+import Header from '../organisms/Header'
 
 type TLayoutProps = {
   children: ReactNode
@@ -19,7 +19,7 @@ const Layout = ({ children }: TLayoutProps) => {
     <div className="w-full min-h-screen">
       <Header />
 
-      <main className={cx('mt-16 px-8 mx-auto', !isHome ? "md:max-w-3xl" : "md:max-w-5xl")}>{children}</main>
+      <main className={cx('mt-16 px-8 mx-auto', !isHome ? 'md:max-w-3xl' : 'md:max-w-5xl')}>{children}</main>
     </div>
   )
 }

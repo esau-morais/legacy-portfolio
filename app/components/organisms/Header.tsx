@@ -1,7 +1,7 @@
-import { useState } from "react"
+import { useState } from 'react'
 
-import { BarIcon, DotIcon } from "../atoms"
-import Portal from "./Portal"
+import { BarIcon, DotIcon } from '../atoms'
+import Portal from './Portal'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)

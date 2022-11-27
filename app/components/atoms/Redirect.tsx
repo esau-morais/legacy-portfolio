@@ -1,9 +1,9 @@
-import { useMemo } from "react"
+import { useMemo } from 'react'
 
-import { Link } from "@remix-run/react"
-import type { RemixLinkProps } from "@remix-run/react/dist/components"
+import { Link } from '@remix-run/react'
+import type { RemixLinkProps } from '@remix-run/react/dist/components'
 
-import { cx } from "@/utils/classNames"
+import { cx } from '@/utils/classNames'
 
 type TRedirectProps = {
   label: string
@@ -27,7 +27,7 @@ const Redirect = ({ to, label, direction, ...rest }: TRedirectProps) => {
   return (
       <Link
         role="link"
-        className={cx("flex text-xl-mb md:text-xl font-extrabold", direction ? direction === 'west' ? 'flex-row-reverse' : 'justify-between'  : null)}
+        className={cx('flex text-xl-mb md:text-xl font-extrabold', direction ? direction === 'west' ? 'flex-row-reverse' : 'justify-between'  : null)}
         to={to}
         {...rest}
       >

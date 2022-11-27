@@ -1,6 +1,6 @@
-import type { IProject } from "@/lib/data"
+import type { IProject } from '@/lib/data'
 
-import { Redirect } from "../atoms"
+import { Redirect } from '../atoms'
 
 const Card = ({ data }: { data: IProject }) => {
   return (

@@ -1,7 +1,7 @@
-import { type ReactNode, useMemo } from "react"
+import { type ReactNode, useMemo } from 'react'
 
-import { getValidChildren } from "@/utils/children"
-import { cx } from "@/utils/classNames"
+import { getValidChildren } from '@/utils/children'
+import { cx } from '@/utils/classNames'
 
 const Footer = ({ children }: { children: ReactNode }) => {
   const childrensCount = getValidChildren(children).length
@@ -13,7 +13,7 @@ const Footer = ({ children }: { children: ReactNode }) => {
   }, [children, childrensCount])
 
   return (
-    <footer className={cx("flex items-center px-9 pb-9", childrensCount === 1 ? 'justify-end' : 'justify-between')}>
+    <footer className={cx('flex items-center px-9 pb-9', childrensCount === 1 ? 'justify-end' : 'justify-between')}>
       {renderChildrensConditionally} 
     </footer>
   )

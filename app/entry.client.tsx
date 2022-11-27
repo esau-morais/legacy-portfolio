@@ -1,7 +1,7 @@
-import { startTransition, StrictMode } from "react"
-import { hydrateRoot } from "react-dom/client"
+import { startTransition, StrictMode } from 'react'
+import { hydrateRoot } from 'react-dom/client'
 
-import { RemixBrowser } from "@remix-run/react"
+import { RemixBrowser } from '@remix-run/react'
 
 const hydrate = () => {
   startTransition(() => {

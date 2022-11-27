@@ -1,5 +1,5 @@
-const IMAGE_STYLE_INTERSECTION = "w-full md:w-2/3 mix-blend-exclusion object-cover"
-const ITEM_SPACE_INTERSECTION = "pl-2"
+const IMAGE_STYLE_INTERSECTION = 'w-full md:w-2/3 mix-blend-exclusion object-cover'
+const ITEM_SPACE_INTERSECTION = 'pl-2'
 
 const Uses = () => {
   return (

@@ -36,7 +36,7 @@ describe('<Redirect />', () => {
     )
     
     expect(screen.getByTestId('navigation_arrow')).toBeInTheDocument()
-    expect(screen.getByTestId('navigation_arrow')).toHaveTextContent("→")
+    expect(screen.getByTestId('navigation_arrow')).toHaveTextContent('→')
 
     rerender(
       <Wrapper>
@@ -45,7 +45,7 @@ describe('<Redirect />', () => {
     )
     
     expect(screen.getByTestId('navigation_arrow')).toBeInTheDocument()
-    expect(screen.getByTestId('navigation_arrow')).toHaveTextContent("←")
+    expect(screen.getByTestId('navigation_arrow')).toHaveTextContent('←')
 
     rerender(
       <Wrapper>
@@ -54,7 +54,7 @@ describe('<Redirect />', () => {
     )
     
     expect(screen.getByTestId('navigation_arrow')).toBeInTheDocument()
-    expect(screen.getByTestId('navigation_arrow')).toHaveTextContent("↗")
+    expect(screen.getByTestId('navigation_arrow')).toHaveTextContent('↗')
   })
 
   it('should redirect to an existing route', async () => {
