@@ -1,21 +1,12 @@
-import { json, type LoaderFunction } from "@remix-run/node"
+import { type LoaderFunction } from "@remix-run/node"
 import { useLoaderData } from "@remix-run/react"
 
 import AnimatedBars from "@/components/molecules/AnimatedBars"
-import type { ITrack } from "@/lib/data"
 import { fetchCurrentPlaying } from "@/services/spotify.server"
 import { cx } from "@/utils/classNames"
 
-export const loader: LoaderFunction = async () => {
-  const track: ITrack = await fetchCurrentPlaying()
-
-  return json({
-    isPlaying: track.is_playing,
-    title: track.item.name,
-    albumImageURL: track.item.album.images[1].url,
-    artistName: track.item.artists[0].name
-  })
-}
+export const loader: LoaderFunction = async () =>
+  await fetchCurrentPlaying()
 
 const Karaoke = () => {
   const track = useLoaderData<typeof loader>()
