@@ -25,6 +25,7 @@
       "expression",
       { "allowArrowFunctions": true }
     ],
+    "quotes": [2, "single", { "avoidEscape": true }],
     "semi": [ "error", "never" ],
     "object-curly-spacing": ["error", "always"],
     "import-helpers/order-imports": [

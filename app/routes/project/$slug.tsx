@@ -1,8 +1,8 @@
-import { json, type LoaderFunction } from "@remix-run/node"
-import { useLoaderData } from "@remix-run/react"
+import { json, type LoaderFunction } from '@remix-run/node'
+import { useLoaderData } from '@remix-run/react'
 
-import type { IProject } from "@/lib/data"
-import { fetchProjectBySlug } from "@/services/project.server"
+import type { IProject } from '@/lib/data'
+import { fetchProjectBySlug } from '@/services/project.server'
 
 export const loader: LoaderFunction = async ({ params }) => {
   const project = await fetchProjectBySlug(params.slug ?? '')
@@ -33,7 +33,7 @@ const Project = () => {
         {project.stack.map((technology, position) =>
           <>
             <li key={position}>{technology}</li>
-            <span>{!project.stack[position - 1] ? "▲" : null}</span>
+            <span>{!project.stack[position - 1] ? '▲' : null}</span>
           </>
         )}
       </ul>

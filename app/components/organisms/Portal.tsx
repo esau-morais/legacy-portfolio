@@ -1,12 +1,12 @@
-import { Fragment, useRef } from "react"
+import { Fragment, useRef } from 'react'
 
-import { Link, useLocation } from "@remix-run/react"
+import { Link, useLocation } from '@remix-run/react'
 
-import { cx } from "@/utils/classNames"
-import { MENU_ITEMS } from "@/utils/menuItemsList"
-import { Dialog, Transition } from "@headlessui/react"
+import { cx } from '@/utils/classNames'
+import { MENU_ITEMS } from '@/utils/menuItemsList'
+import { Dialog, Transition } from '@headlessui/react'
 
-import { BarIcon } from "../atoms"
+import { BarIcon } from '../atoms'
 
 type TModalProps = {
   isOpen: boolean
@@ -54,7 +54,7 @@ const Portal = ({ isOpen, onCloseModal }: TModalProps) => {
                     <Link
                       ref={pathname === item.path ? currentActiveMenuItemRef : null}
                       to={item.path}
-                      className={cx("text-4xl-mb md:text-4xl rotate-x-30 translate-z-[300px]", pathname === item.path ? 'line-through decoration-blue' : '')}
+                      className={cx('text-4xl-mb md:text-4xl rotate-x-30 translate-z-[300px]', pathname === item.path ? 'line-through decoration-blue' : '')}
                       onClick={onCloseModal} 
                     >
                         {item.label}

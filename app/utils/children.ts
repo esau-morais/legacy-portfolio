@@ -1,4 +1,4 @@
-import { Children, isValidElement, type ReactNode } from "react"
+import { Children, isValidElement, type ReactNode } from 'react'
 
 /**
  * gets only valid children of a component

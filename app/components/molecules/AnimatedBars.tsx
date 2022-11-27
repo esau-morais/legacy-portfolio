@@ -1,6 +1,6 @@
-import { useEffect } from "react"
+import { useEffect } from 'react'
 
-import { cx } from "@/utils/classNames"
+import { cx } from '@/utils/classNames'
 import { animate } from 'motion'
 
 const BAR_STYLES_INTERSECTION = 'w-9 bg-light'

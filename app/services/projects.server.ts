@@ -1,4 +1,4 @@
-import prisma from "@/utils/prisma"
+import prisma from '@/utils/prisma'
 
 const fetchProjects = async () => {
   return await prisma.project.findMany({
