@@ -50,10 +50,23 @@ module.exports = {
     extend: {
       backgroundImage: {
         'retro': "url('/images/retro.png')"
+      },
+      keyframes: {
+        bounce: {
+          '10%': { transform: 'scaleY(0.3)' },
+          '30%': { transform: 'scaleY(1)' },
+          '60%': { transform: 'scaleY(0.5)' },
+          '80%': { transform: 'scaleY(0.75)' },
+          '100%': { transform: 'scaleY(0.6)' },
+        }
+      },
+      animation: {
+        bouce: 'bounce 2.2s ease infinite alternate'
       }
     },
   },
   plugins: [
-    require('@tailwindcss/line-clamp')
+    require('@tailwindcss/line-clamp'),
+    require('tailwindcss-animation-delay')
   ],
 }
