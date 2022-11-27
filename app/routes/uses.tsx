@@ -1,3 +1,5 @@
+const ITEM_SPACE_INTERSECTION = "pl-2"
+
 const Uses = () => {
   return (
     <section className="flex flex-col items-center">
@@ -12,10 +14,10 @@ const Uses = () => {
           loading="lazy"
         />
         <ul className="list-['▲']">
-          <li className="pl-2">Husky gaming blizzard 60% keyboard</li>
-          <li className="pl-2">Logitech  G203 Lyghtsync gaming mouse</li>
-          <li className="pl-2">Acer Aspire A515-54</li>
-          <li className="pl-2">QCY T13 Wireless Earbuds</li>
+          <li className={ITEM_SPACE_INTERSECTION}>Husky gaming blizzard 60% keyboard</li>
+          <li className={ITEM_SPACE_INTERSECTION}>Logitech  G203 Lyghtsync gaming mouse</li>
+          <li className={ITEM_SPACE_INTERSECTION}>Acer Aspire A515-54</li>
+          <li className={ITEM_SPACE_INTERSECTION}>QCY T13 Wireless Earbuds</li>
         </ul>
       </div>
 
@@ -28,9 +30,9 @@ const Uses = () => {
           loading="lazy"
         />
         <ul className="list-['▲']">
-          <li className="pl-2">Editor: Neovim</li>
-          <li className="pl-2">Theme: Dracula</li>
-          <li className="pl-2">Terminal: WSL Ubuntu/ZSH</li>
+          <li className={ITEM_SPACE_INTERSECTION}>Editor: Neovim</li>
+          <li className={ITEM_SPACE_INTERSECTION}>Theme: Dracula</li>
+          <li className={ITEM_SPACE_INTERSECTION}>Terminal: WSL Ubuntu/ZSH</li>
         </ul>
       </div>
     </section>
