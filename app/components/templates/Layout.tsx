@@ -19,7 +19,7 @@ const Layout = ({ children }: TLayoutProps) => {
     <div className="w-full min-h-screen">
       <Header />
 
-      <main className={cx('mt-16 px-8', !isHome ? "md:px-300" : "md:px-150")}>{children}</main>
+      <main className={cx('mt-16 px-8 mx-auto', !isHome ? "md:max-w-3xl" : "md:max-w-5xl")}>{children}</main>
     </div>
   )
 }

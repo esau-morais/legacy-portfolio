@@ -23,7 +23,7 @@ const Project = () => {
   return (
     <section>
       <img
-        className="mix-blend-overlay w-full h-[264px] object-cover"
+        className="mix-blend-exclusion w-full h-[264px] object-cover"
         src={project.cover_image}
         alt={project.name}
         loading="lazy"
@@ -38,7 +38,7 @@ const Project = () => {
         )}
       </ul>
 
-      <h1 className="text-4xl-mb md:text-4xl font-extrabold">
+      <h1 className="text-4xl-mb md:text-4xl font-extrabold leading-tight">
         {project.name}
       </h1>
 
