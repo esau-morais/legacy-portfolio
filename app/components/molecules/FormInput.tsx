@@ -4,12 +4,13 @@ import type { TInputProps } from '../atoms/Input'
 
 type TFormInputProps = {
   name: string
-  errors?: object
+  errors?: {
+    name: string
+  }
 } & TInputProps
 
 const FormInput = ({ id, name, label, errors, className, ...props }: TFormInputProps) => {
-  const errorMessages = { ...errors } || {}
-  const hasErrors = !!errors?.[name]
+  const hasErrors = !!errors?.name
 
   return (
     <div className={className}>
@@ -22,7 +23,7 @@ const FormInput = ({ id, name, label, errors, className, ...props }: TFormInputP
         {...props}
       />
 
-      <small className="block text-left text-sm text-red-500">{errors?.[name]}</small>
+      <small className="block text-left text-sm text-red-500">{errors?.name}</small>
     </div>
   )
 }
