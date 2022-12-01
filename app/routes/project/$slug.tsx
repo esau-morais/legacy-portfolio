@@ -18,7 +18,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 }
 
 const Project = () => {
-  const project: IProject = useLoaderData()
+  const project: IProject = useLoaderData<typeof loader>()
 
   return (
     <section>

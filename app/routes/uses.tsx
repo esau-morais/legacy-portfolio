@@ -27,7 +27,7 @@ const Uses = () => {
         <img
           className={IMAGE_STYLE_INTERSECTION}
           src="/images/uses_2.jpg"
-          alt="Dark front-side of my setup, including keyboard and laptop turned on"
+          alt="Dark front-side view of my setup, including keyboard and laptop turned on"
           loading="lazy"
         />
         <ul className="list-['▲']">

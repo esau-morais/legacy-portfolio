@@ -15,6 +15,7 @@ h5,
 p,
 span,
 a,
-li {
+li,
+label {
   @apply uppercase;
 }

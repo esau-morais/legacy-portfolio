@@ -30,7 +30,10 @@ module.exports = {
       'gray': '#4B5563',
       'dark-blue': '#0052D4',
       "blue": "#4364F7",
-      "light-blue": "#6FB1FC"
+      "light-blue": "#6FB1FC",
+      'green': {
+        500: '#22c55e'
+      }
     },
     letterSpacing: {
       wide: '0.22em',

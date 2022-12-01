@@ -15,3 +15,10 @@ model Project {
   stack       String[] @db.VarChar(50)
   cover_image String   @db.VarChar(2000)
 }
+
+model ContactBook {
+  id    BigInt @id @default(autoincrement())
+  name  String @db.VarChar(255)
+  email String @db.VarChar(255)
+  body  String @db.VarChar(500)
+}
