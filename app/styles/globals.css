@@ -7,6 +7,10 @@
   src: url("/fonts/PPTelegraf.otf"), url("/fonts/PPTelegraf-Bold.otf");
 }
 
+body {
+  background: linear-gradient(0deg, rgba(0,0,0,.86), rgba(0,0,0,.64)), url('https://grainy-gradients.vercel.app/noise.svg') repeat;
+}
+
 h1,
 h2,
 h3,
