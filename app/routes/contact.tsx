@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useRef } from 'react'
 
-import { type ActionFunction, json } from '@remix-run/node'
+import { type ActionFunction, json, type MetaFunction } from '@remix-run/node'
 import { useActionData, useTransition, Form } from '@remix-run/react'
 
 import { Button } from '@/components/atoms'
 import FormInput from '@/components/molecules/FormInput'
 import FormTextarea from '@/components/molecules/FormTextarea'
 import { dispatchContact } from '@/services/contact.server'
-import { requiredFieldMessage } from '@/utils/constants'
+import { emailRegEx, requiredFieldMessage, validEmailMessage } from '@/utils/constants'
 
 type TActionData = 
   | {
@@ -17,18 +17,28 @@ type TActionData =
   } 
   | undefined 
 
+export const meta: MetaFunction = () => ({
+  title: 'Contact Me',
+  description:
+    'Want to discuss a project, suggest something or even only greet? Contact me now',
+})
+
 export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData()
 
-  const name = formData.get('name')
-  const email = formData.get('email')
-  const body = formData.get('body')
+  const name = formData.get('name')?.toString() ?? ''
+  const email = formData.get('email')?.toString() ?? ''
+  const body = formData.get('body')?.toString() ?? ''
 
-  const validEmail = email?.toString().match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$/ig)
+  const validEmail = email?.toString().match(emailRegEx)
 
   const errors: TActionData = {
     name: name ? null : requiredFieldMessage,
-    email: validEmail ? null ? requiredFieldMessage : '// this field must have a valid email' : null,
+    email: validEmail
+      ? null
+      : email
+        ? validEmailMessage
+        : requiredFieldMessage,
     body: body ? null : requiredFieldMessage
   }
 
@@ -54,12 +64,12 @@ const Contact = () => {
   }, [isSending, actionData?.success])
 
   const renderButtonLabel = useMemo(() => {
-    return transition.state === 'submitting'
+    return isSending && !actionData?.success
       ? 'Sending...'
       : actionData?.success
       ? 'Sent!'
       : 'Send'
-  }, [transition, actionData?.success])
+  }, [isSending, actionData?.success])
 
   return (
     <section className="flex flex-col items-center">
@@ -93,7 +103,7 @@ const Contact = () => {
           type="submit"
           label={renderButtonLabel}
           theme={actionData?.success ? 'success' : 'primary'}
-          disabled={isSending}
+          disabled={isSending && !actionData?.success}
         />
       </Form>
     </section>
