@@ -45,7 +45,12 @@ const Button = ({
       )}
       {...props}
     >
-      <span className={cx(icon && !!label ? 'mr-2' : null)}>{<>{icon}</>}</span>
+      <span
+        data-testid="button_icon"
+        className={cx(icon && !!label ? 'mr-2' : null)}
+      >
+        {<>{icon}</>}
+      </span>
       <span>{label}</span>
     </button>
   )

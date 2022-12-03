@@ -14,7 +14,6 @@ const Input: FC<TInputProps> = forwardRef<HTMLInputElement, TInputProps>(
       id,
       label,
       type = 'text',
-      placeholder,
       className,
       ...props
     },
@@ -22,10 +21,8 @@ const Input: FC<TInputProps> = forwardRef<HTMLInputElement, TInputProps>(
   ) =>
   <input
     id={id}
-    aria-label={label}
     type={type}
     ref={ref}
-    placeholder={placeholder}
     className={cx(
       'relative inline-flex w-full py-6 px-4 text-base bg-light text-dark placeholder:text-gray border border-white',
       className,
