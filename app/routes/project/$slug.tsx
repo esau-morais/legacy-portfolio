@@ -3,6 +3,7 @@ import { useLoaderData } from '@remix-run/react'
 
 import type { IProject } from '@/lib/data'
 import { fetchProjectBySlug } from '@/services/project.server'
+import LazyImage from '@/components/atoms/LazyImage'
 
 export const loader: LoaderFunction = async ({ params }) => {
   const project = await fetchProjectBySlug(params.slug ?? '')
@@ -18,15 +19,15 @@ export const loader: LoaderFunction = async ({ params }) => {
 }
 
 const Project = () => {
-  const project: IProject = useLoaderData()
+  const project: IProject = useLoaderData<typeof loader>()
 
   return (
     <section>
-      <img
-        className="mix-blend-exclusion w-full h-[264px] object-cover"
+      <LazyImage
+        className="mix-blend-exclusion"
         src={project.cover_image}
         alt={project.name}
-        loading="lazy"
+        height={40}
       />
 
       <ul className="mt-4 flex items-center space-x-2">

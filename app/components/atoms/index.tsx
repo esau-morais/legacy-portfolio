@@ -1,4 +1,6 @@
 export { default as BarIcon } from './BarIcon'
+export { default as Button } from './Button'
 export { default as DotIcon } from './DotIcon'
+export { default as Input } from './Input'
 export { default as Footer } from './Footer'
 export { default as Redirect } from './Redirect'

@@ -30,7 +30,13 @@ module.exports = {
       'gray': '#4B5563',
       'dark-blue': '#0052D4',
       "blue": "#4364F7",
-      "light-blue": "#6FB1FC"
+      "light-blue": "#6FB1FC",
+      'green': {
+        500: '#22c55e'
+      },
+      'red': {
+        500: '#ef4444'
+      },
     },
     letterSpacing: {
       wide: '0.22em',
@@ -48,25 +54,12 @@ module.exports = {
       lg: '1366px'
     },
     extend: {
-      backgroundImage: {
-        'retro': "url('/images/retro.png')"
-      },
-      keyframes: {
-        bounce: {
-          '10%': { transform: 'scaleY(0.3)' },
-          '30%': { transform: 'scaleY(1)' },
-          '60%': { transform: 'scaleY(0.5)' },
-          '80%': { transform: 'scaleY(0.75)' },
-          '100%': { transform: 'scaleY(0.6)' },
-        }
-      },
-      animation: {
-        bouce: 'bounce 2.2s ease infinite alternate'
+      transitionTimingFunction: {
+        lazy: 'cubic-bezier(.4,0,.2,1)'
       }
     },
   },
   plugins: [
-    require('@tailwindcss/line-clamp'),
-    require('tailwindcss-animation-delay')
+    require('@tailwindcss/line-clamp')
   ],
 }

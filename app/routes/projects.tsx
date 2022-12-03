@@ -1,9 +1,16 @@
-import { type LoaderFunction, json } from '@remix-run/node'
+import { type LoaderFunction, json, type MetaFunction } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
 
 import Card from '@/components/molecules/Card'
 import { type IProject } from '@/lib/data'
 import { fetchProjects } from '@/services/projects.server'
+
+export const meta: MetaFunction = () => ({
+  title: 'Projects',
+  description:
+    'Checkout some of my side projects',
+})
+
 export const loader: LoaderFunction = async () => {
   const projects = await fetchProjects()
 

@@ -26,7 +26,7 @@ const getAccessToken = async () => {
   return response.json()
 }
 
-const fetchCurrentPlaying = async () => {
+export const fetchCurrentPlaying = async () => {
   const { access_token } = await getAccessToken()
 
   const response = await fetch(CURRENT_PLAYING_ENDPOINT, {
@@ -49,5 +49,3 @@ const fetchCurrentPlaying = async () => {
     artistName: track.item.artists[0].name
   })
 }
-
-export { fetchCurrentPlaying }
