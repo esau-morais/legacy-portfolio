@@ -3,9 +3,9 @@ import LazyImage from '@/components/atoms/LazyImage'
 const About = () => {
   return (
     <section>
-      <h1 className="text-center text-4xl-mb md:text-4xl font-extrabold">About me</h1>
+      <h1 className="text-center headingOne">About me</h1>
 
-      <h2 className="text-3xl-mb md:text-3xl font-extrabold">Short bio</h2>
+      <h2 className="headingTwo">Short bio</h2>
       <div className="flex items-baseline flex-wrap">
         <p className="mr-2">
           ▲ Welcome to my world, I’m Esaú [ee-saw]. I am 17 years-old and I currently live at Brazil.
@@ -13,7 +13,7 @@ const About = () => {
         </p>
       </div>
 
-      <h2 className="mt-4 text-3xl-mb md:text-3xl font-extrabold">Long bio</h2>
+      <h2 className="mt-4 headingTwo">Long bio</h2>
       <div className="flex items-baseline flex-wrap space-y-4">
         <p className="mb-2">
           ▲ Esaú [ee-saw] is 17 years-old, Brazilian and he has been learning more about the web development world since 2020.
@@ -31,13 +31,13 @@ const About = () => {
         </p>
       </div>
 
-      <h2 className="mt-4 text-3xl-mb md:text-3xl font-extrabold">Work Experience</h2>
+      <h2 className="mt-4 headingTwo">Work Experience</h2>
       <div className="flex flex-col md:flex-row items-start md:items-center">
         <div className="w-16 h-16 mr-2">
           <LazyImage src="/images/alive.svg" alt="Alive App logo" />
         </div>
         <div>
-          <h3 className="text-2xl-mb md:text-2xl font-extrabold">Front-End Developer</h3>
+          <h3 className="headingThree">Front-End Developer</h3>
           <p className="text-base">Alive App <span>▲</span> Apr 2022 - Dec 2022</p>
         </div>
       </div>      

@@ -14,7 +14,7 @@ const Uses = () => {
   return (
     <section>
       <div className="flex flex-col items-center">
-        <h1 className="text-4xl-mb md:text-4xl font-extrabold">Uses</h1>
+        <h1 className="headingOne">Uses</h1>
 
         <div className="w-full h-[56vh]">
           <LazyImage

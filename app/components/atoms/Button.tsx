@@ -41,7 +41,7 @@ const Button = ({
       type={type}
       className={cx(
         className,
-        'block tems-center mt-4 transform duration-200 text-base text-black font-semibold hover:shadow-retro focus:outline-none focus:ring focus:ring-light-blue focus:ring-offset-2 disabled:opacity-50',
+        'block tems-center mt-4 transform duration-200 text-base text-black font-semibold hover:shadow-retro focus:ring-offset-2 disabled:opacity-50',
         icon ? 'p-1' : deepSizeMap[size],
         deepThemeMap[theme],
       )}

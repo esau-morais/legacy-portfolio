@@ -10,8 +10,8 @@ const Header = () => {
     <header className="z-10 md:sticky top-0 inset-x-0 w-full h-16 py-6 px-9 flex items-center justify-end">
       {!isOpen ? 
         <button
-          aria-label="Open"
-          className="flex flex-col items-center space-y-2 outline-none focus:ring focus:ring-light-blue"
+          aria-label="open full-screen navigation"
+          className="flex flex-col items-center space-y-2"
           onClick={() => setIsOpen(true)}
         >
           <BarIcon />

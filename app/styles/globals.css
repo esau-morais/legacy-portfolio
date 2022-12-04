@@ -11,15 +11,43 @@ body {
   background: linear-gradient(0deg, rgba(0,0,0,.86), rgba(0,0,0,.64)), url('https://grainy-gradients.vercel.app/noise.svg') repeat;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
-span,
-a,
-li,
-label {
-  @apply uppercase;
+@layer base {
+
+  body {
+    @apply selection:bg-dark selection:text-light;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  span,
+  a,
+  li,
+  label {
+    @apply uppercase;
+  }
+
+  a,
+  button, 
+  input,
+  textarea {
+      @apply outline-none focus:ring focus:ring-light-blue;
+  }
+}
+
+@layer components {
+  .headingOne {
+    @apply text-4xl-mb md:text-4xl font-extrabold;
+  }
+
+  .headingTwo {
+    @apply text-3xl-mb md:text-3xl font-extrabold;
+  }
+
+  .headingThree {
+    @apply text-2xl-mb md:text-2xl font-extrabold;
+  }
 }

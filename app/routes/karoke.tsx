@@ -39,7 +39,7 @@ const Karaoke = () => {
         </p>
       : null}
 
-      <h1 className="text-4xl-mb md:text-4xl font-extrabold leading-tight">
+      <h1 className="headingOne leading-tight">
         {isPlaying ? title : 'Not playing'}
       </h1>
     </section>

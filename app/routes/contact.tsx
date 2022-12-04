@@ -73,7 +73,7 @@ const Contact = () => {
 
   return (
     <section className="flex flex-col items-center">
-      <h1 className="text-4xl-mb md:text-4xl font-extrabold">Contact me</h1>
+      <h1 className="headingOne">Contact me</h1>
 
       <Form className="flex flex-col" method="post" replace ref={formReference}>
         <FormInput
