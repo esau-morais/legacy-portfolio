@@ -24,7 +24,7 @@ const Input: FC<TInputProps> = forwardRef<HTMLInputElement, TInputProps>(
     type={type}
     ref={ref}
     className={cx(
-      'relative inline-flex w-full py-6 px-4 text-base bg-light text-dark placeholder:text-gray border border-white',
+        'relative inline-flex w-full py-6 px-4 text-base bg-light text-dark placeholder:text-gray focus:outline-none focus:ring focus:ring-light-blue',
       className,
     )}
     {...props}

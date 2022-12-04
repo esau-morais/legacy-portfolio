@@ -21,7 +21,7 @@ const Karaoke = () => {
 
   return (
     <section className="flex flex-col items-center text-center">
-      <div className="w-300 relative">
+      <div className="w-300 h-300 relative">
         {isPlaying ? <AnimatedBars /> : null}
         <LazyImage
           className={cx(
@@ -31,7 +31,6 @@ const Karaoke = () => {
           src={isPlaying ? albumImageURL : '/images/not_playing.jpg'}
           alt={title}
           title={title}
-          height={46}
         />
       </div>
       {isPlaying ?

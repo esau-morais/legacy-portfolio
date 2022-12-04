@@ -7,11 +7,10 @@ const IMAGE_STYLES_INTERSECTION = 'absolute w-full h-full object-cover transitio
 
 type TLazyImageProps = {
   src: string
-  height: number
   alt: string
 } & ImgHTMLAttributes<HTMLImageElement> 
 
-const LazyImage = ({ className, src, height, alt }: TLazyImageProps) => {
+const LazyImage = ({ className, src, alt }: TLazyImageProps) => {
   const [hasLoaded, setHasLoaded] = useState(false)
   const [isInView, setIsInView] = useState(false)
   const imageReference = useRef(null)
@@ -25,30 +24,25 @@ const LazyImage = ({ className, src, height, alt }: TLazyImageProps) => {
   return (
     <div
       ref={imageReference}
-      className="relative overflow-hidden w-full"
-      style={{
-        height: `${height}vh`
-      }}
+      className="relative overflow-hidden w-full min-w-[inherit] h-full min-h-[inherit] max-h-[inherit]"
     >
+      {renderBlurredImage}
       {isInView ? (
-        <>
-          {renderBlurredImage}
-          <img
-            className={cx(
-              IMAGE_STYLES_INTERSECTION,
-              hasLoaded ? 'opacity-100' : 'opacity-0',
-              className
-            )}
-            src={src}
-            alt={alt}
-            onLoad={() => setHasLoaded(true)}
-            onError={(e) => {
-              e.currentTarget.onerror = null
-              e.currentTarget.title = ''
-            }}
-            loading="lazy"
-          />
-        </>
+        <img
+          className={cx(
+            IMAGE_STYLES_INTERSECTION,
+            hasLoaded ? null : 'opacity-0',
+            className
+          )}
+          src={src}
+          alt={alt}
+          onLoad={() => setHasLoaded(true)}
+          onError={(e) => {
+            e.currentTarget.onerror = null
+            e.currentTarget.title = ''
+          }}
+          loading="lazy"
+        />
       ) : null}
     </div>
   )

@@ -32,7 +32,7 @@ const Projects = () => {
     <section className="flex flex-col items-center">
       <h1 className="text-4xl-mb md:text-4xl font-extrabold">Projects</h1>
 
-      <div className="gap-x-6 space-y-6 columns-1 md:columns-2 lg:columns-3">
+      <div className="space-y-6 space-x-6 columns-1 md:columns-2 lg:columns-3">
         {projects?.map(project => <Card key={project.id} data={project} />)}
       </div>
     </section>

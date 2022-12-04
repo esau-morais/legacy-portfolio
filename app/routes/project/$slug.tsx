@@ -1,9 +1,10 @@
 import { json, type LoaderFunction } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
 
+import { Redirect } from '@/components/atoms'
+import LazyImage from '@/components/atoms/LazyImage'
 import type { IProject } from '@/lib/data'
 import { fetchProjectBySlug } from '@/services/project.server'
-import LazyImage from '@/components/atoms/LazyImage'
 
 export const loader: LoaderFunction = async ({ params }) => {
   const project = await fetchProjectBySlug(params.slug ?? '')
@@ -23,12 +24,17 @@ const Project = () => {
 
   return (
     <section>
-      <LazyImage
-        className="mix-blend-exclusion"
-        src={project.cover_image}
-        alt={project.name}
-        height={40}
-      />
+      <div className="w-fit">
+        <Redirect label="Projects" to="/projects" direction="west" />
+      </div>
+
+      <div className="w-full h-[40vh]">
+        <LazyImage
+          className="mix-blend-exclusion"
+          src={project.cover_image}
+          alt={project.name}
+        />
+      </div>
 
       <ul className="mt-4 flex items-center space-x-2">
         {project.stack.map((technology, position) =>
@@ -43,7 +49,7 @@ const Project = () => {
         {project.name}
       </h1>
 
-      <p>{project.description}</p>
+      <p className="text-base">{project.description}</p>
     </section>
   )
 }
