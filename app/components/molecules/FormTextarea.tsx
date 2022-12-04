@@ -15,7 +15,7 @@ const FormTextarea = ({ id, name, label, errors, className, ...props }: TFormTex
       <label htmlFor={id}>{label}</label>
       <textarea
         aria-invalid={hasErrors}
-        className="relative inline-flex w-full py-6 px-4 text-base bg-light text-dark placeholder:text-gray outline-none focus:ring focus:ring-light-blue"
+        className="relative inline-flex w-full py-6 px-4 text-base bg-light text-dark placeholder:text-gray"
         id={id}
         name={name}
         rows={5}
