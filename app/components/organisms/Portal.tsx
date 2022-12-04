@@ -41,7 +41,7 @@ const Portal = ({ isOpen, onCloseModal }: TModalProps) => {
             >
               
               <button
-                className="absolute top-6 right-9 flex flex-col items-center space-y-2"
+                className="aspect-square absolute top-6 right-9 flex flex-col justify-center items-center space-y-2 outline-none focus:ring focus:ring-light-blue"
                 onClick={onCloseModal}
               >
                 <BarIcon className="w-8 rotate-45 translate-y-[5px]" />
@@ -54,7 +54,10 @@ const Portal = ({ isOpen, onCloseModal }: TModalProps) => {
                     <Link
                       ref={pathname === item.path ? currentActiveMenuItemRef : null}
                       to={item.path}
-                      className={cx('text-4xl-mb md:text-4xl rotate-x-30 translate-z-[300px]', pathname === item.path ? 'line-through decoration-blue' : '')}
+                      className={cx(
+                        'text-4xl-mb md:text-4xl rotate-x-30 translate-z-[300px] outline-none focus:ring focus:ring-light-blue',
+                        pathname === item.path ? 'line-through decoration-blue' : ''
+                      )}
                       onClick={onCloseModal} 
                     >
                         {item.label}

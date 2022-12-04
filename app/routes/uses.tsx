@@ -15,12 +15,13 @@ const Uses = () => {
     <section>
       <div className="flex flex-col items-center">
         <h1 className="text-4xl-mb md:text-4xl font-extrabold">Uses</h1>
-          
-        <LazyImage
-          src="/images/uses.jpg"
-          alt="Dark right-sided vision of my setup, including keyboard and mouse with purple LED lights"
-          height={56}
-        />
+
+        <div className="w-full h-[56vh]">
+          <LazyImage
+            src="/images/uses.jpg"
+            alt="Dark right-sided vision of my setup, including keyboard and mouse with purple LED lights"
+          />
+        </div>
       </div>
 
       <div>

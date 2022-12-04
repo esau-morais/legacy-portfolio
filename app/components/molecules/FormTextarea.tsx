@@ -4,15 +4,18 @@ type TFormTextAreaProps = {
   id: string
   name: string
   label: string
-  errors: object
+  errors: object & string
 } & TextareaHTMLAttributes<HTMLTextAreaElement>
 
 const FormTextarea = ({ id, name, label, errors, className, ...props }: TFormTextAreaProps) => {
+  const hasErrors = !!errors?.[name]
+
   return (
     <div className={className}>
       <label htmlFor={id}>{label}</label>
       <textarea
-        className="relative inline-flex w-full py-6 px-4 text-base bg-light text-dark placeholder:text-gray border border-white"
+        aria-invalid={hasErrors}
+        className="relative inline-flex w-full py-6 px-4 text-base bg-light text-dark placeholder:text-gray outline-none focus:ring focus:ring-light-blue"
         id={id}
         name={name}
         rows={5}
