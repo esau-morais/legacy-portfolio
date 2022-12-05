@@ -42,6 +42,7 @@ const LazyImage = ({ className, src, alt }: TLazyImageProps) => {
             e.currentTarget.title = ''
           }}
           loading="lazy"
+          draggable={false}
         />
       ) : null}
     </div>

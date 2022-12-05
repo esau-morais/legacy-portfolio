@@ -13,7 +13,7 @@ const About = () => {
         </p>
       </div>
 
-      <h2 className="mt-4 headingTwo">Long bio</h2>
+      <h2 className="mt-8 headingTwo">Long bio</h2>
       <div className="flex items-baseline flex-wrap space-y-4">
         <p className="mb-2">
           ▲ Esaú [ee-saw] is 17 years-old, Brazilian and he has been learning more about the web development world since 2020.
@@ -31,15 +31,29 @@ const About = () => {
         </p>
       </div>
 
-      <h2 className="mt-4 headingTwo">Work Experience</h2>
+      <h2 className="mt-8 headingTwo">Work Experience</h2>
       <div className="flex flex-col md:flex-row items-start md:items-center">
         <div className="w-16 h-16 mr-2">
           <LazyImage src="/images/alive.svg" alt="Alive App logo" />
         </div>
         <div>
           <h3 className="headingThree">Front-End Developer</h3>
-          <p className="text-base">Alive App <span>▲</span> Apr 2022 - Dec 2022</p>
+          <p className="text-base">
+            Alive App
+            <span className="mx-2">▲</span>
+            Apr 2022 - Dec 2022
+          </p>
         </div>
+      </div>      
+
+      <h2 className="mt-8 headingTwo">Education</h2>
+      <div className="flex flex-col items-start">
+        <h3 className="headingThree">System Analysis</h3>
+        <p className="text-base">
+          Sao Paulo Federal Institute of Education, Science and Technology
+          <span className="mx-2">▲</span>
+          Aug 2022 - Aug 2025
+        </p>
       </div>      
     </section>
   )
