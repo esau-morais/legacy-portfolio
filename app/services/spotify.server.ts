@@ -32,7 +32,7 @@ export const fetchCurrentPlaying = async () => {
   const response = await fetch(CURRENT_PLAYING_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${access_token}`,
-      'Cache-Control': 'max-age=1, stale-while-revalidate=59'
+      'Cache-Control': 'private, max-age=10',
     }
   })
 

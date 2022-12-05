@@ -26,11 +26,11 @@ export const meta: MetaFunction = () => ({
 export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData()
 
-  const name = formData.get('name')?.toString() ?? ''
-  const email = formData.get('email')?.toString() ?? ''
-  const body = formData.get('body')?.toString() ?? ''
+  const name = formData.get('name') as string
+  const email = formData.get('email') as string
+  const body = formData.get('body') as string
 
-  const validEmail = email?.toString().match(emailRegEx)
+  const validEmail = email.match(emailRegEx)
 
   const errors: TActionData = {
     name: name ? null : requiredFieldMessage,

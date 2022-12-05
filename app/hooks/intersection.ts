@@ -7,12 +7,12 @@ let observer: IntersectionObserver
 const handleIntersections = (entries: IntersectionObserverEntry[]) => {
   entries.forEach((entry) => {
     if (listenerCallbacks.has(entry.target)) {
-      const getTargetedelementent = listenerCallbacks.get(entry.target)
+      const getTargetedElement = listenerCallbacks.get(entry.target)
 
       if (entry.isIntersecting || entry.intersectionRatio > 0) {
         observer.unobserve(entry.target)
         listenerCallbacks.delete(entry.target)
-        getTargetedelementent()
+        getTargetedElement()
       }
     }
   })
@@ -21,7 +21,6 @@ const handleIntersections = (entries: IntersectionObserverEntry[]) => {
 const getIntersectionObserver = () => {
   if (observer === undefined) {
     observer = new IntersectionObserver(handleIntersections, {
-      rootMargin: '100px',
       threshold: 0.15,
     })
   }
