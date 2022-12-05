@@ -30,7 +30,7 @@ const Karaoke = () => {
           )}
           src={isPlaying ? albumImageURL : '/images/not_playing.jpg'}
           alt={`${title}, by ${artistName}`}
-          title={title}
+          title={`${title}, by ${artistName}`}
         />
       </div>
       {isPlaying ?
