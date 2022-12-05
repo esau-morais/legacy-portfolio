@@ -31,11 +31,6 @@ const MENU_ITEMS: Array<TMenuItem> = [
     label: 'About',
     path: '/about'
   },
-  {
-    id: 7,
-    label: 'Atoms',
-    path: '/atoms'
-  },
 ]
 
 export { MENU_ITEMS }
