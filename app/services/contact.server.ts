@@ -1,3 +1,4 @@
+import prisma from '@/utils/prisma'
 import type { ContactBook } from '@prisma/client'
 
 export const dispatchContact = async (data: Pick<ContactBook, 'name' | 'email' | 'body'>) =>
