@@ -4,7 +4,7 @@ type TFormTextAreaProps = {
   id: string
   name: string
   label: string
-  errors: object & string
+  errors?: object & string
 } & TextareaHTMLAttributes<HTMLTextAreaElement>
 
 const FormTextarea = ({ id, name, label, errors, className, ...props }: TFormTextAreaProps) => {

@@ -22,7 +22,7 @@ const FormInput = ({ id, name, label, errors, className, ...props }: TFormInputP
         {...props}
       />
 
-      <small className="block text-left text-sm text-red-500" role="alert">{errors?.[name]}</small>
+      <small className="mt-1 block text-left text-sm text-red-500" role="alert">{errors?.[name]}</small>
     </div>
   )
 }

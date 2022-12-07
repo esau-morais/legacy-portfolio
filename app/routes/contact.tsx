@@ -96,6 +96,7 @@ const Contact = () => {
           name="body"
           label="message"
           placeholder="Want to discuss a project, suggest something or even only greet? Tell me everything here!"
+          maxLength={500}
           errors={actionData?.errors}
         />
         <Button

@@ -10,12 +10,19 @@ import {
 
 import Layout from './components/templates/Layout'
 import styles from './styles/tailwind.css'
+import { description } from './utils/constants'
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
   title: 'Esaú Morais',
+  description,
   viewport: 'width=device-width,initial-scale=1',
-  'color-scheme': 'dark'
+  'color-scheme': 'dark',
+  'og:type': 'website',
+  'og:url': 'https://emots.dev',
+  'og:title': 'Esaú Morais',
+  'og:description': description,
+  // TODO: create OG image
 })
 
 export const links: LinksFunction = () => [

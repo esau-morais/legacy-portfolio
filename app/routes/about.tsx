@@ -33,12 +33,12 @@ const About = () => {
 
       <h2 className="mt-8 headingTwo">Work Experience</h2>
       <div className="flex flex-col md:flex-row items-start md:items-center">
-        <div className="w-16 h-16 mr-2">
+        <div className="w-16 h-16 mb-2 md:mr-2">
           <LazyImage src="/images/alive.svg" alt="Alive App logo" />
         </div>
-        <div>
-          <h3 className="headingThree">Front-End Developer</h3>
-          <p className="text-base">
+        <div className="text-base">
+          <p className="mb-2 font-extrabold">Front-End Developer</p>
+          <p>
             Alive App
             <span className="mx-2">▲</span>
             Apr 2022 - Dec 2022
@@ -47,9 +47,9 @@ const About = () => {
       </div>      
 
       <h2 className="mt-8 headingTwo">Education</h2>
-      <div className="flex flex-col items-start">
-        <h3 className="headingThree">System Analysis</h3>
-        <p className="text-base">
+      <div className="flex flex-col items-start text-base">
+        <p className="mb-2 font-extrabold">System Analysis</p>
+        <p>
           Sao Paulo Federal Institute of Education, Science and Technology
           <span className="mx-2">▲</span>
           Aug 2022 - Aug 2025
