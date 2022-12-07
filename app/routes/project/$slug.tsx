@@ -1,10 +1,18 @@
-import { json, type LoaderFunction } from '@remix-run/node'
+import { json, type MetaFunction, type LoaderFunction } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
 
 import { Redirect } from '@/components/atoms'
 import LazyImage from '@/components/atoms/LazyImage'
 import type { IProject } from '@/lib/data'
 import { fetchProjectBySlug } from '@/services/project.server'
+
+export const meta: MetaFunction = ({ data }) => {
+  return {
+    title: data.name,
+    description: data.description,
+    'og:image': data.cover_image
+  }
+}
 
 export const loader: LoaderFunction = async ({ params }) => {
   const project = await fetchProjectBySlug(params.slug ?? '')
@@ -40,7 +48,7 @@ const Project = () => {
         {project.stack.map((technology, position) =>
           <>
             <li key={position}>{technology}</li>
-            <span>{!project.stack[position - 1] ? '▲' : null}</span>
+            <span className="last:hidden">▲</span>
           </>
         )}
       </ul>
