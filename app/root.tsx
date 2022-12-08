@@ -8,6 +8,8 @@ import {
   ScrollRestoration,
 } from '@remix-run/react'
 
+import { MetronomeLinks } from '@metronome-sh/react'
+
 import Layout from './components/templates/Layout'
 import styles from './styles/tailwind.css'
 import { description } from './utils/constants'
@@ -26,6 +28,7 @@ export const meta: MetaFunction = () => ({
 })
 
 export const links: LinksFunction = () => [
+  { rel: 'preload', href: styles, as: 'style' },
   { rel: 'stylesheet', href: styles },
 ]
 
@@ -35,6 +38,7 @@ const App = () => {
       <head>
         <Meta />
         <Links />
+        <MetronomeLinks />
       </head>
       <body className="font-telegraf text-light">
         <Layout>
