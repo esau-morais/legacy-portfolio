@@ -23,7 +23,7 @@ const getAccessToken = async () => {
     })
   })
 
-  return response.json()
+  return response.json() as Promise<{ access_token: string }>
 }
 
 export const fetchCurrentPlaying = async () => {
