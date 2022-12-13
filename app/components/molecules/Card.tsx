@@ -1,11 +1,17 @@
 import type { IProject } from '@/lib/data'
+import { motion } from 'framer-motion'
 
 import { Redirect } from '../atoms'
 import LazyImage from '../atoms/LazyImage'
 
 const Card = ({ data }: { data: IProject }) => {
   return (
-    <figure className="break-inside-avoid min-w-full md:min-w-[290px] min-h-auto max-h-[426px] flex flex-col items-center odd:aspect-video even:aspect-[9/16]">
+    <motion.figure
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      className="break-inside-avoid min-w-full md:min-w-[290px] min-h-auto max-h-[426px] flex flex-col items-center odd:aspect-video even:aspect-[9/16]"
+    >
       <LazyImage src={data.cover_image} alt={data.name} />
 
       <figcaption className="w-full bg-light text-dark p-4">
@@ -16,7 +22,7 @@ const Card = ({ data }: { data: IProject }) => {
           prefetch="render"
         />
       </figcaption>
-    </figure>
+    </motion.figure>
   )
 }
 

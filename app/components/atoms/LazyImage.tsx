@@ -1,7 +1,7 @@
 import { type ImgHTMLAttributes, useRef, useState, cloneElement, useMemo } from 'react'
 
-import { useIntersection } from '@/hooks/intersection'
 import { cx } from '@/utils/classNames'
+import { useInView } from 'framer-motion'
 
 const IMAGE_STYLES_INTERSECTION = 'absolute w-full h-full object-cover transition-opacity duration-1000 lazy'
 
@@ -12,9 +12,8 @@ type TLazyImageProps = {
 
 const LazyImage = ({ className, src, alt }: TLazyImageProps) => {
   const [hasLoaded, setHasLoaded] = useState(false)
-  const [isInView, setIsInView] = useState(false)
   const imageReference = useRef(null)
-  useIntersection(imageReference, () => setIsInView(true))
+  const isInView = useInView(imageReference)
 
   const renderBlurredImage = useMemo(() => cloneElement(<img src={src} alt={alt} />, {
     ref: imageReference,
@@ -39,7 +38,9 @@ const LazyImage = ({ className, src, alt }: TLazyImageProps) => {
           onLoad={() => setHasLoaded(true)}
           onError={(e) => {
             e.currentTarget.onerror = null
-            e.currentTarget.title = ''
+            e.currentTarget.setAttribute('style', 'background: black; opacity: 1;')
+            e.currentTarget.title = 'Could not load image'
+            e.currentTarget.alt = 'Could not load image'
           }}
           loading="lazy"
           draggable={false}

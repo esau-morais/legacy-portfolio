@@ -40,7 +40,7 @@ body {
 
 @layer components {
   .headingOne {
-    @apply text-4xl-mb md:text-4xl font-extrabold;
+    @apply text-4xl-mb md:text-4xl font-extrabold leading-tight;
   }
 
   .headingTwo {

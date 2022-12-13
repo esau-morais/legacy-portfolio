@@ -53,11 +53,14 @@ const Project = () => {
         )}
       </ul>
 
-      <h1 className="text-4xl-mb md:text-4xl font-extrabold leading-tight">
+      <h1 className="headingOne">
         {project.name}
       </h1>
 
-      <p className="text-base">{project.description}</p>
+      <p
+        className="text-base"
+        dangerouslySetInnerHTML={{ __html: project.description }}
+      />
     </section>
   )
 }

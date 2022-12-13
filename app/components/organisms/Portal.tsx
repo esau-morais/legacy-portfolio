@@ -3,8 +3,9 @@ import { Fragment, useRef } from 'react'
 import { Link, useLocation } from '@remix-run/react'
 
 import { cx } from '@/utils/classNames'
-import { MENU_ITEMS } from '@/utils/menuItemsList'
+import { MENU_ITEMS } from '@/utils/lists'
 import { Dialog, Transition } from '@headlessui/react'
+import { motion } from 'framer-motion'
 
 import { BarIcon } from '../atoms'
 
@@ -21,12 +22,12 @@ const Portal = ({ isOpen, onCloseModal }: TModalProps) => {
     <Transition
       show={isOpen}
       as={Fragment}
-        enter="transition-opacity duration-150"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="transition-opacity duration-150"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
+      enter="transition-opacity duration-150"
+      enterFrom="opacity-0"
+      enterTo="opacity-100"
+      leave="transition-opacity duration-150"
+      leaveFrom="opacity-100"
+      leaveTo="opacity-0"
     >
       <Dialog
         as="div"
@@ -35,7 +36,7 @@ const Portal = ({ isOpen, onCloseModal }: TModalProps) => {
         initialFocus={currentActiveMenuItemRef}
       >
         <div className="fixed inset-0 overflow-y-auto">
-          <div className="flex items-center justify-center text-center">
+          <motion.div initial={false} animate={isOpen ? 'open' : 'closed'} className="flex items-center justify-center text-center">
             <Dialog.Panel
               className="w-full min-h-screen flex flex-col items-center justify-center transform overflow-hidden bg-dark/90 backdrop-blur shadow-xl transition-all"
             >
@@ -49,9 +50,17 @@ const Portal = ({ isOpen, onCloseModal }: TModalProps) => {
                 <BarIcon className="w-8 -rotate-45 -translate-y-[5px]" />
               </button>
 
-              <ul>
+              <motion.ul>
                 {MENU_ITEMS.map(item => (
-                  <li key={item.id}>
+                  <motion.li
+                    key={item.id}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    initial={{ y: 10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -10, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <Link
                       ref={pathname === item.path ? currentActiveMenuItemRef : null}
                       to={item.path}
@@ -63,12 +72,12 @@ const Portal = ({ isOpen, onCloseModal }: TModalProps) => {
                     >
                         {item.label}
                     </Link>
-                  </li>
+                  </motion.li>
                   )
                 )}
-              </ul>
+              </motion.ul>
             </Dialog.Panel>
-          </div>
+          </motion.div>
         </div>
       </Dialog>
     </Transition>

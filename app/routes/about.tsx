@@ -1,11 +1,31 @@
 import LazyImage from '@/components/atoms/LazyImage'
+import List from '@/components/molecules/List'
+import type { TListItem } from '@/lib/types'
+
+const LINKS_LIST: Array<TListItem> = [
+  {
+    id: 1,
+    content: <span>Twitter: <a href="https://twitter.com/_3morais">@_3morais</a></span>
+  },
+  {
+    id: 2,
+    content: <span>GitHub: <a href="https://github.com/esau-morais">@esau-morais</a></span>
+  },
+  {
+    id: 3,
+    content: <span>LinkedIn: <a href="https://linkedin/.com/in/emmorais">@emmorais</a></span>
+  },
+]
 
 const About = () => {
   return (
     <section>
       <h1 className="text-center headingOne">About me</h1>
 
-      <h2 className="headingTwo">Short bio</h2>
+      <h2 className="headingTwo">Links</h2>
+      <List items={LINKS_LIST} />
+
+      <h2 className="mt-8 headingTwo">Short bio</h2>
       <div className="flex items-baseline flex-wrap">
         <p className="mr-2">
           ▲ Welcome to my world, I’m Esaú [ee-saw]. I am 17 years-old and I currently live at Brazil.
