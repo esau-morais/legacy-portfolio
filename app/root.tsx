@@ -24,7 +24,7 @@ export const meta: MetaFunction = () => ({
   'og:url': 'https://emots.dev',
   'og:title': 'Esaú Morais',
   'og:description': description,
-  'og:image': '/images/og_image.png'
+  'og:image': 'https://raw.githubusercontent.com/esau-morais/portfolio/dev/public/images/og_image.png'
 })
 
 export const links: LinksFunction = () => [
