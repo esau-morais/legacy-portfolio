@@ -12,7 +12,7 @@ import { MetronomeLinks } from '@metronome-sh/react'
 
 import Layout from './components/templates/Layout'
 import styles from './styles/tailwind.css'
-import { description } from './utils/constants'
+import { description, ogImage, title, url } from './utils/constants'
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -21,10 +21,17 @@ export const meta: MetaFunction = () => ({
   viewport: 'width=device-width,initial-scale=1',
   'color-scheme': 'dark',
   'og:type': 'website',
-  'og:url': 'https://emots.dev',
-  'og:title': 'Esaú Morais',
+  'og:url': url,
+  'og:title': title,
   'og:description': description,
-  'og:image': 'https://raw.githubusercontent.com/esau-morais/portfolio/dev/public/images/og_image.png'
+  'og:image': ogImage,
+  'og:image:width': '1600',
+  'og:image:height': '630',
+  'twitter:card': 'summary_large_image',
+  'twitter:url': url,
+  'twitter:title': title,
+  'twitter:description': description,
+  'twitter:image': ogImage
 })
 
 export const links: LinksFunction = () => [
