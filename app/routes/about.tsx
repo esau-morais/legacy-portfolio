@@ -54,7 +54,7 @@ const About = () => {
       <h2 className="mt-8 headingTwo">Work Experience</h2>
       <div className="flex flex-col md:flex-row items-start md:items-center">
         <div className="w-16 h-16 mb-2 md:mr-2">
-          <LazyImage src="/images/alive.svg" alt="Alive App logo" />
+          <LazyImage className='rounded-r-lg' src="/images/alive.svg" alt="Alive App logo" />
         </div>
         <div className="text-base">
           <p className="mb-2 font-extrabold">Front-End Developer</p>
