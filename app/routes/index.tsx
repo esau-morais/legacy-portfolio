@@ -1,26 +1,22 @@
-import { useState, useEffect } from 'react'
-
-import { Button, PlayIcon } from '@/components/atoms'
 import LazyImage from '@/components/atoms/LazyImage'
-import { cx } from '@/utils/classNames'
 
 const Index = () => {
-  const [pronunciation, setPronunciation] = useState<HTMLAudioElement | null>(null)
-  const [isPlaying, setIsPlaying] = useState(false)
+  // const [pronunciation, setPronunciation] = useState<HTMLAudioElement | null>(null)
+  // const [isPlaying, setIsPlaying] = useState(false)
 
-  useEffect(() => {
-    setPronunciation(new Audio('/audios/pronunciation.mp4'))
-  }, [])
+  // useEffect(() => {
+  //   setPronunciation(new Audio('/audios/pronunciation.mp4'))
+  // }, [])
 
-  useEffect(() => {
-    if (!pronunciation) return
+  // useEffect(() => {
+  //   if (!pronunciation) return
 
-    pronunciation.addEventListener('ended', () => setIsPlaying(false))
+  //   pronunciation.addEventListener('ended', () => setIsPlaying(false))
 
-    return () => {
-      pronunciation.removeEventListener('ended', () => setIsPlaying(false))
-    }
-  }, [pronunciation])
+  //   return () => {
+  //     pronunciation.removeEventListener('ended', () => setIsPlaying(false))
+  //   }
+  // }, [pronunciation])
 
   return (
     <section className="flex flex-col items-center">
