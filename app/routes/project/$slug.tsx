@@ -44,7 +44,7 @@ const Project = () => {
         />
       </div>
 
-      <ul className="mt-4 flex items-center space-x-2">
+      <ul className="mt-4 flex items-center space-x-2 flex-wrap">
         {project.stack.map((technology, position) =>
           <>
             <li key={position}>{technology}</li>

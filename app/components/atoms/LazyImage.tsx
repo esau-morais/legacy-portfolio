@@ -17,7 +17,7 @@ const LazyImage = ({ className, src, alt }: TLazyImageProps) => {
 
   const renderBlurredImage = useMemo(() => cloneElement(<img src={src} alt={alt} />, {
     ref: imageReference,
-    className: cx(IMAGE_STYLES_INTERSECTION, 'blur-md', hasLoaded ? 'opacity-0' : 'opacity-100')
+    className: cx(IMAGE_STYLES_INTERSECTION, 'blur-md', hasLoaded ? 'opacity-0' : 'opacity-100', className)
   }), [hasLoaded, src, alt])
 
   return (
