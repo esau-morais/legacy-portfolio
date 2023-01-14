@@ -5,12 +5,21 @@ import type { RemixLinkProps } from '@remix-run/react/dist/components'
 
 import { cx } from '@/utils/classNames'
 
+type TSize = 'sm' | 'md' | 'lg'
+
 type TRedirectProps = {
   label: string
   direction?: 'west' | 'east' | 'northeast'
+  size?: TSize
 } & RemixLinkProps
 
-const Redirect = ({ to, label, direction, ...rest }: TRedirectProps) => {
+const deepSizeMap: Record<TSize, string> = {
+  sm: 'text-base',
+  md: 'text-lg-mb md:text-lg',
+  lg: 'text-xl-mb md:text-xl'
+}
+
+const Redirect = ({ to, label, direction, size = 'lg', ...rest }: TRedirectProps) => {
   const renderArrowIconBasedOnDirection = useMemo(() => { 
     switch(direction) {
       case 'west':
@@ -28,8 +37,9 @@ const Redirect = ({ to, label, direction, ...rest }: TRedirectProps) => {
       <Link
         role="link"
         className={cx(
-          'flex text-xl-mb md:text-xl font-extrabold',
-          direction ? direction === 'west' ? 'flex-row-reverse' : 'justify-between'  : null
+          'flex font-extrabold',
+          direction ? direction === 'west' ? 'flex-row-reverse' : 'justify-between'  : null,
+          deepSizeMap[size]
         )}
         to={to}
         {...rest}

@@ -32,11 +32,11 @@ const Project = () => {
 
   return (
     <section>
-      <div className="w-fit">
-        <Redirect label="Projects" to="/projects" direction="west" />
+      <div className="w-fit mb-2">
+        <Redirect label="Projects" to="/projects" direction="west" size='md' />
       </div>
 
-      <div className="w-full h-[40vh]">
+      <div className="w-full aspect-video">
         <LazyImage
           className="mix-blend-exclusion"
           src={project.cover_image}
